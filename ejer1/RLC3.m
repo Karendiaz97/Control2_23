@@ -1,29 +1,7 @@
 clear all;clc;
-% Extraido de "Identification for the second-order systems based on the step response"
-% Lei Chen, Junhong Li, Ruifeng Ding
-% Mathematical and Computer Modelling 53 (2011) 1074–1083
-%Codigo realizado por JAP 
-% syms k1 k2 k3 alfa1 alfa2 beta
-% s=solve('alfa1*alfa2=(k2^2-k1*k3)/(k1^2+k2)',...
-% 'alfa1+alfa2=(k3+k1*k2)/(k1^2+k2)','alfa1','alfa2');
-% simplify(s.alfa1)
-% simplify(s.alfa2)
-% alfa1=s.alfa1(1);
-% alfa2=s.alfa1(2);
-% s1=solve('beta*(alfa1-alfa2)=k1+alfa2',...
-% 'beta*(alfa1^2-alfa2^2)=k2+alfa2^2',...
-% 'beta*(alfa1^3-alfa2^3)=k3+alfa2^3','beta');
-% sys_G=tf(2*[8 1],conv([5 1],[6 1])); %la otra planta
-%sys_G=tf(16*[45 1],conv([25 1],[30 1]))
-%sys_G=tf(3*[10 1],conv([6 1],[6 1])); %esta tiene los polos iguales
-% sys_G=tf(2*[8 1],([ 1 2 2])); %la otra planta
-% opt = stepDataOptions;
-% opt.StepAmplitude = 1;
-% t_s=0:2:50;
-%[y,t0]=step(StepAmplitude*sys_G,t_s);
 [x1]=xlsread('Curvas_Medidas_RLC');
 t0=x1(:,1);
-y=x1(:,3);
+y=x1(:,3);%tension
 t_inic=0.02
 [val lugar] =min(abs(t_inic-t0)); y_t1=y(lugar);
 t_t1=t0(lugar);

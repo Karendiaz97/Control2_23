@@ -3,7 +3,7 @@ StepAmplitude = 12;
 [x1]=xlsread('Curvas_Medidas_RLC');
 t0=x1(:,1);
 y=x1(:,2);%corriente
-t_inic=0.04;
+t_inic=0.04; 
 [val lugar] =min(abs(1*t_inic-t0)); y_t1=y(lugar);
 t_t1=t0(lugar);
 ii=1;
