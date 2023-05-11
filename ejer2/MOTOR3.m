@@ -1,7 +1,7 @@
 clear all;clc;
 [x1]=xlsread('Curvas_Medidas_Motor');
 t0=x1(:,1);
-y=x1(:,2);
+y=x1(:,3); %corriente
 t_inic=0.022
 [val lugar] =min(abs(t_inic-t0)); y_t1=y(lugar);
 t_t1=t0(lugar);
